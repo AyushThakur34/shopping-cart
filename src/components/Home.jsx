@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { API_URL } from "../ApiUrl";
 import Loader from "./Loader/Loader";
 import Product from "./Product";
+import EmptyCardboard from "../assets/empty-cardboard.png";
 
 const Home = ()=> {
     const [loading, setLoading] = useState(false);
@@ -39,8 +40,10 @@ const Home = ()=> {
                     </div>
                 ) 
                 : (
-                    <div className="h-screen w-screen flex justify-center items-center text-4xl font-semibold text-[#0f1629]">
-                        <p>Store is Empty!</p>
+                    <div className=" text-2xl font-semibold text-[#0f1629] flex flex-col items-center mt-[13%]">
+                        <img src={EmptyCardboard} className="w-[10rem] h-auto relative"/>
+                        <p>Oops! All items are sold out</p>
+                        <p className="opacity-70 text-xl">Fresh stock will be added soon</p>
                     </div>
                 )
             }

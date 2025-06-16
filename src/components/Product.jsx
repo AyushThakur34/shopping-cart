@@ -1,11 +1,28 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import {add, remove } from "../redux/slices/CartSlice"
 
 const Product = (props)=> {
+    const { cart } = useSelector((state)=> state);
     let prod = props.prod;
-    const [selected, setSelected] = useState(false);
+    const dispatch = useDispatch();
+
+    let state = false;
+    if(cart.some((item)=> item.id === prod.id)) state = true;
+    const [selected, setSelected] = useState(state);
     
     const selectedHandler = ()=> {
-        selected ? setSelected(false) : setSelected(true);
+        if(selected) {
+            dispatch(remove(prod.id));
+            toast.error("Item removed from Cart");
+            setSelected(false);
+        }
+        else {
+            dispatch(add(prod));
+            toast.success("Item added to Cart");
+            setSelected(true);
+        }
     }
 
     return (
