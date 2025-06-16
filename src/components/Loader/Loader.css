@@ -1,5 +1,5 @@
 .Loader {
-  --c:no-repeat linear-gradient(#0f1629 0 0);
+  --c:no-repeat linear-gradient(#2a3f75 0 0);
   background: 
     var(--c),var(--c),var(--c),
     var(--c),var(--c),var(--c),
@@ -16,10 +16,4 @@
 @keyframes l32-2 {
   0%,40%  {background-position: 0 0,0 50%, 0 100%,50% 100%,100% 100%,100% 50%,100% 0,50% 0,  50% 50% }
   60%,100%{background-position: 0 50%, 0 100%,50% 100%,100% 100%,100% 50%,100% 0,50% 0,0 0,  50% 50% }
-}
-.Loader-wrapper {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
