@@ -3,10 +3,12 @@ import { API_URL } from "../ApiUrl";
 import Loader from "./Loader/Loader";
 import Product from "./Product";
 import EmptyCardboard from "../assets/empty-cardboard.png";
+import { useSelector } from "react-redux";
 
 const Home = ()=> {
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState([]);
+    const { cart } = useSelector((state)=> state); 
 
     async function fetchProductData() {
         setLoading(true);
@@ -27,15 +29,19 @@ const Home = ()=> {
     }, []);
     
     return (
-        <div>
+        <div className="max-w-[1080px] w-8/12 mx-auto mt-[10rem]">
             {
                 loading ? (<Loader/>) 
                 : (data.length > 0) ? (
-                    <div>
+                    <div className="grid grid-cols-3 mx-auto gap-[4rem]">
                         {
-                            data.map( (prod)=> (
-                                <Product key={prod.id} prod={prod}/>
-                            ))
+                            data.map( (prod)=> 
+                                {
+                                    let selected = false
+                                    if(cart.some((item)=> item.id === prod.id)) selected = true;
+                                    return <Product key={prod.id} prod={prod} selected={selected}/>;
+                                }
+                            )
                         }
                     </div>
                 ) 

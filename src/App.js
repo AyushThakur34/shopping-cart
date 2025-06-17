@@ -7,8 +7,9 @@ import { ToastContainer } from "react-toastify";
 
   const App = ()=> {
     return (
-      <div className="relative overflow-x-hidden">
-        <ToastContainer/>
+      <div className="relative overflow-x-hidden pb-10">
+        <ToastContainer position="top-center" closeButton={false} hideProgressBar="true" stacked="true"
+        autoClose="1000"/>
         <Routes>
           <Route path="/" element={<MainHeader/>}>
             <Route index element={<Home/>}/>

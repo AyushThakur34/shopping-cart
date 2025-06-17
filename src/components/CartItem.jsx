@@ -12,24 +12,27 @@ const CartItem = (porps)=> {
         toast.error("Item removed from cart");
     }
 
+    let description = item.description.substr(0, 80) + "...";
+
     return (
-        <div>
+        <div className="flex gap-x-10 mb-[3.5rem]">
             <div>
-                <div>
-                    <img src={item.image}/>
+                <img src={item.image} className="w-[10rem] h-[10rem]"/>
+            </div>
+            <div className="w-[55%] flex flex-col gap-y-5">
+                <h1>{item.title}</h1>
+                <h1 className="text-sm text-gray-500">{description}</h1>
+
+                <div className="flex justify-between items-baseline">
+                    <p className="text-green-500 font-bold">${item.price}</p>
+
+                    <div className="relative">
+                        <div className="bg-red-600 w-6 h-6 absolute rounded-full z-0"/>
+                        <button onClick={deleteHandler} className="text-xl z-10">
+                            <MdDeleteForever />
+                        </button>
+                    </div> 
                 </div>
-                <div>
-                    <h1>{item.title}</h1>
-                    <h1>{item.description}</h1>
-                    <div>
-                        <p>{item.price}</p>
-                    </div>
-                </div>
-            </div>  
-            <div>
-                <button onClick={deleteHandler}>
-                    <MdDeleteForever/>
-                </button>
             </div>
         </div>
     )
