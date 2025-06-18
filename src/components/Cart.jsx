@@ -13,19 +13,19 @@ const Cart = ()=> {
     }, [cart])
 
     return (
-        <div className="mt-[10rem]">
+        <div>
             {
                 (cart.length > 0)
                 ? (
-                    <div className="w-8/12 max-w-[1080px] mx-auto flex mt-[5rem]">
-                        <div className="w-1/2">
+                    <div className="w-8/12 max-w-[1080px] mx-auto flex gap-x-40">
+                        <div className="w-1/2 max-h-[31rem] shadow-2xl overflow-y-scroll rounded-lg">
                             {
                                 cart.map((item, index)=> {
                                     return <CartItem key={item.id} item={item} itemIndex={index}/>
                                 })
                             }
                         </div>
-                        <div className="flex flex-col gap-y-3 pl-5 fixed right-[20rem]">
+                        <div className="flex flex-col gap-y-3 pl-5 right-[20rem]">
                             <div>
                                 <div className="uppercase font-semibold text-green-700 text-md">Your Cart</div>
                                 <div className="uppercase font-bold text-green-700 text-4xl">Summary</div>
@@ -33,7 +33,7 @@ const Cart = ()=> {
                             <p>
                                 <span className="text-lg">Total Items: {cart.length}</span>
                             </p>
-                            <p className="text-lg">Total Amount: <span className="font-bold">${totalAmount}</span></p>
+                            <p className="text-lg">Total Amount: <span className="font-bold">${Number(totalAmount).toFixed(2)}</span></p>
                             <button className="text-white bg-green-700 py-2 px-[5rem] border-2 rounded-md font-bold">Checkout Now</button>
                         </div>
                     </div>

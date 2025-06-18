@@ -1,26 +1,7 @@
-import { useMemo, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-toastify";
-import {add, remove } from "../redux/slices/CartSlice"
-
+import ItemButton from "./ItemButton.jsx";
 
 const Product = (props)=> {
     let prod = props.prod;
-
-    const dispatch = useDispatch();
-
-    let selected = props.selected
-    
-    const selectedHandler = ()=> {
-        if(selected) {
-            dispatch(remove(prod.id));
-            toast.error("Item removed from Cart");
-        }
-        else {
-            dispatch(add(prod));
-            toast.success("Item added to Cart");
-        }
-    }
 
     let title = prod.title.substr(0, 17) + "..."
     let description = prod.description.substr(0, 51) + "..."
@@ -42,13 +23,7 @@ const Product = (props)=> {
                     <p className="text-green-500 font-semibold">${prod.price}</p>
                 </div>
 
-                <button onClick={selectedHandler} className="border-[0.2rem] border-gray-400 rounded-2xl py-1 
-                px-2 text-gray-500 font-bold uppercase text-xs hover:bg-green-500 hover:text-black transition-all
-                duration-200 hover:scale-110">
-                    {
-                        selected ? <p>Remove Item</p> : <p>Add Item</p>
-                    }
-                </button>
+                <ItemButton prod={prod}/>
             </div>
         </div>
     )

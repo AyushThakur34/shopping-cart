@@ -27,8 +27,8 @@ const CartItem = (porps)=> {
                     <p className="text-green-500 font-bold">${item.price}</p>
 
                     <div className="relative">
-                        <div className="bg-red-600 w-6 h-6 absolute rounded-full z-0"/>
-                        <button onClick={deleteHandler} className="text-xl z-10">
+                        <div className="bg-red-500 opacity-75 w-6 h-6 right-[-0.10rem] top-[-0.15rem] absolute rounded-full z-0"/>
+                        <button onClick={deleteHandler} className="text-xl z-10 relative">
                             <MdDeleteForever />
                         </button>
                     </div> 
@@ -36,6 +36,6 @@ const CartItem = (porps)=> {
             </div>
         </div>
     )
-}
+}   
 
 export default CartItem;
