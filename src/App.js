@@ -7,7 +7,7 @@ import { ToastContainer } from "react-toastify";
 
   const App = ()=> {
     return (
-      <div className="relative overflow-x-hidden pb-10">
+      <div className="relative overflow-hidden h-screen">
         <ToastContainer position="top-center" closeButton={false} hideProgressBar="true" stacked="true"
         autoClose="1000"/>
         <Routes>

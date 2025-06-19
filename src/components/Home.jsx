@@ -27,11 +27,12 @@ const Home = ()=> {
     }, []);
     
     return (
-        <div className="max-w-[1080px] w-8/12 mx-auto">
+        <div className="max-w-[1080px] w-8/12 mx-auto h-screen">
             {
                 loading ? (<Loader/>) 
                 : (data.length > 0) ? (
-                    <div className="grid grid-cols-3 mx-auto gap-[4rem] max-h-[31rem] overflow-y-scroll">
+                    <div className="grid grid-cols-3 mx-auto gap-[4rem] h-screen overflow-y-scroll pb-[12rem] scrollbar-hide
+                [@media(max-width:1000px)]:grid-cols-2">
                         {
                             data.map( (prod)=> 
                                 {
