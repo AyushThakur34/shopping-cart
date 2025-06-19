@@ -18,7 +18,7 @@ const Cart = ()=> {
                 (cart.length > 0)
                 ? (
                     <div className="w-8/12 max-w-[1080px] mx-auto flex gap-x-40">
-                        <div className="w-1/2 max-h-[31rem] shadow-2xl overflow-y-scroll rounded-lg">
+                        <div className="w-1/2 max-h-[31rem] shadow-2xl overflow-y-scroll rounded-lg p-3">
                             {
                                 cart.map((item, index)=> {
                                     return <CartItem key={item.id} item={item} itemIndex={index}/>
