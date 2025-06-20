@@ -32,7 +32,7 @@ const Home = ()=> {
                 loading ? (<Loader/>) 
                 : (data.length > 0) ? (
                     <div className="grid grid-cols-3 mx-auto gap-[4rem] h-screen overflow-y-scroll pb-[12rem] scrollbar-hide
-                [@media(max-width:1000px)]:grid-cols-2">
+                [@media(max-width:1050px)]:grid-cols-2 [@media(max-width:650px)]:grid-cols-1">
                         {
                             data.map( (prod)=> 
                                 {

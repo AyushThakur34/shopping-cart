@@ -10,11 +10,11 @@ const Product = (props)=> {
         <div className="flex flex-col items-center gap-y-5 shadow-2xl p-4">
             <div>
                 <h3 className="text-xl font-semibold w-[20ch] break-all text-center
-                [@media(max-width:1200px)]:text-lg [@media(max-width:1100px)]:w-[12ch]">{title}</h3>
+                [@media(max-width:1200px)]:text-lg [@media(max-width:1100px)_and_(min-width:1000px)]:w-[12ch]">{title}</h3>
             </div>
             <div>
                 <p className="text-gray-400 text-center w-[25ch] break-all
-                [@media(max-width:1200px)]:text-sm [@media(max-width:1100px)]:w-[20ch]">{description}</p>
+                [@media(max-width:1200px)]:text-sm [@media(max-width:1100px)_and_(min_width:650px)]:w-[20ch]">{description}</p>
             </div>
             <div>
                 <img src={prod.image} className="w-[10rem] h-[10rem]"/>

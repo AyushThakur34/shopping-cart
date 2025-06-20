@@ -15,13 +15,13 @@ const CartItem = (porps)=> {
     let description = item.description.substr(0, 80) + "...";
 
     return (
-        <div className="flex gap-x-10 mb-[3.5rem]">
+        <div className="flex gap-x-10 mb-[3.5rem] [@media(max-width:1100px)]:flex-col items-center">
             <div>
                 <img src={item.image} className="w-[10rem] h-[10rem]"/>
             </div>
             <div className="w-[55%] flex flex-col gap-y-5">
-                <h1>{item.title}</h1>
-                <h1 className="text-sm text-gray-500">{description}</h1>
+                <h1 className="[@media(max-width:1100px)]:text-center [@media(max-width:350px)]:text-xs [@media(max-width:400px)]:text-sm [@media(max-width:1100px)]:mt-4">{item.title}</h1>
+                <h1 className="text-sm text-gray-500 [@media(max-width:1100px)]:text-center [@media(max-width:450px)]:text-xs [@media(max-width:400px)]:hidden">{description}</h1>
 
                 <div className="flex justify-between items-baseline">
                     <p className="text-green-500 font-bold">${item.price}</p>
