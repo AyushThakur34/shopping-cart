@@ -19,7 +19,7 @@ const Cart = ()=> {
                 ? (
                     <div className="w-8/12 max-w-[1080px] mx-auto flex gap-x-20 h-full [@media(max-width:1000px)]:flex-col [@media(max-width:1000px)]:items-center">
                         <div className="w-[100%] h-screen overflow-y-scroll pb-[8rem] [@media(max-width:1000px)]:pb-0  rounded-lg p-3 scrollbar-hide
-                        [@media(max-width:1000px)]:h-[40rem]">
+                        [@media(max-width:1000px)]:h-[20rem]">
                             {
                                 cart.map((item, index)=> {
                                     return <CartItem key={item.id} item={item} itemIndex={index}/>
