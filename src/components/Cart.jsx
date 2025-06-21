@@ -17,8 +17,8 @@ const Cart = ()=> {
             {
                 (cart.length > 0)
                 ? (
-                    <div className="w-8/12 max-w-[1080px] mx-auto flex gap-x-40 h-full [@media(max-width:1000px)]:flex-col [@media(max-width:1000px)]:items-center">
-                        <div className="w-[80%] h-screen overflow-y-scroll pb-[8rem] [@media(max-width:1000px)]:pb-0  rounded-lg p-3 scrollbar-hide
+                    <div className="w-8/12 max-w-[1080px] mx-auto flex gap-x-20 h-full [@media(max-width:1000px)]:flex-col [@media(max-width:1000px)]:items-center">
+                        <div className="w-[100%] h-screen overflow-y-scroll pb-[8rem] [@media(max-width:1000px)]:pb-0  rounded-lg p-3 scrollbar-hide
                         [@media(max-width:1000px)]:h-[40rem]">
                             {
                                 cart.map((item, index)=> {
@@ -35,7 +35,7 @@ const Cart = ()=> {
                                 <span className="text-lg">Total Items: {cart.length}</span>
                             </p>
                             <p className="text-lg">Total Amount: <span className="font-bold">${Number(totalAmount).toFixed(2)}</span></p>
-                            <button className="text-white bg-green-700 py-2 px-[5rem] border-2 rounded-md font-bold [@media(max-width:450px)]:px-[3rem] [@media(max-width:450px)]:text-xs">Checkout Now</button>
+                            <button className="text-white bg-green-700 py-2 px-[2rem] border-2 rounded-md font-bold [@media(max-width:450px)]:px-[3rem] [@media(max-width:450px)]:text-xs">Checkout Now</button>
                         </div>
                     </div>
                 )

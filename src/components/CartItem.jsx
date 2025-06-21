@@ -15,19 +15,19 @@ const CartItem = (porps)=> {
     let description = item.description.substr(0, 80) + "...";
 
     return (
-        <div className="flex gap-x-10 mb-[3.5rem] [@media(max-width:1100px)]:flex-col items-center">
+        <div className="flex gap-x-10 mb-[3.5rem] [@media(max-width:1000px)]:flex-col items-center">
             <div>
                 <img src={item.image} className="w-[10rem] h-[10rem]"/>
             </div>
             <div className="w-[55%] flex flex-col gap-y-5">
-                <h1 className="[@media(max-width:1100px)]:text-center [@media(max-width:350px)]:text-xs [@media(max-width:400px)]:text-sm [@media(max-width:1100px)]:mt-4">{item.title}</h1>
-                <h1 className="text-sm text-gray-500 [@media(max-width:1100px)]:text-center [@media(max-width:450px)]:text-xs [@media(max-width:400px)]:hidden">{description}</h1>
+                <h1 className="[@media(max-width:1000px)]:text-center [@media(max-width:350px)]:text-xs [@media(max-width:400px)]:text-sm [@media(max-width:1000px)]:mt-4">{item.title}</h1>
+                <h1 className="text-sm text-gray-500 [@media(max-width:1000px)]:text-center [@media(max-width:450px)]:text-xs [@media(max-width:400px)]:hidden">{description}</h1>
 
-                <div className="flex justify-between items-baseline">
+                <div className="flex justify-between h-7">
                     <p className="text-green-500 font-bold">${item.price}</p>
 
-                    <div className="relative">
-                        <div className="bg-red-500 opacity-75 w-6 h-6 right-[-0.10rem] top-[-0.15rem] absolute rounded-full z-0"/>
+                    <div className="relative pt-[0.15rem]">
+                        <div className="bg-red-600 opacity-75 w-6 h-6 right-[-0.112rem] top-[0.05rem] absolute rounded-full z-0"/>
                         <button onClick={deleteHandler} className="text-xl z-10 relative">
                             <MdDeleteForever />
                         </button>
