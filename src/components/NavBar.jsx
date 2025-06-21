@@ -5,7 +5,7 @@ const NavBar = ()=> {
 
     return (
         <div className="bg-[#131d37] w-full top-0 mb-[5rem]">
-            <div className="flex justify-between w-8/12 mx-auto p-3 max-w-[1080px] [@media(max-width:450px)]:w-screen">
+            <div className="flex justify-between w-8/12 mx-auto p-3 max-w-[1080px] [@media(max-width:650px)]:w-screen">
                 {/* store logo */}
                 <NavLink to="/">
                     <div className="flex items-center gap-x-1">
